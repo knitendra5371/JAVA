@@ -45,7 +45,7 @@ public class MaxNumberOfJobsDone {
 			if (i != -1)
 				maxJob[index] = Math.max(maxJob[index - 1], maxJob[i] + 1);
 			else
-				maxJob[index] = Math.max(maxJob[index - 1], 1);
+				maxJob[index] = maxJob[index - 1];
 
 		}
 
