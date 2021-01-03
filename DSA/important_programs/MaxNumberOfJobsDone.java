@@ -1,3 +1,4 @@
+
 package Imp_Programs;
 
 import java.util.ArrayList;
@@ -41,12 +42,7 @@ public class MaxNumberOfJobsDone {
 
 		for (int index = 1; index < len; index++) {
 			int i = notConflictJob(jList, index);
-
-			if (i != -1)
-				maxJob[index] = Math.max(maxJob[index - 1], maxJob[i] + 1);
-			else
-				maxJob[index] = maxJob[index - 1];
-
+			maxJob[index] = (i != -1) ? Math.max(maxJob[index - 1], maxJob[i] + 1) : maxJob[index - 1];
 		}
 
 		System.out.println(maxJob[len - 1]);
@@ -54,3 +50,4 @@ public class MaxNumberOfJobsDone {
 	}
 
 }
+
