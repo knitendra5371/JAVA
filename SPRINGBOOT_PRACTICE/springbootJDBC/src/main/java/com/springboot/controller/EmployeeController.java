@@ -4,10 +4,10 @@ import com.springboot.dao.EmployeeDao;
 import com.springboot.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/employee")
@@ -27,7 +27,7 @@ public class EmployeeController {
     public String updateEmployee(@RequestBody Employee emp){
 
         int status=employeeDao.updateEmployee(emp);
-        return "data inserted Successfully";
+        return "data updated Successfully";
     }
 
     @PostMapping("/delete")
@@ -37,5 +37,14 @@ public class EmployeeController {
         return "data inserted Successfully";
     }
 
+    @GetMapping("/{id}")
+    public Optional<Employee> fetchById(@PathVariable int id){
+        return employeeDao.findById(id);
+    }
+
+    @GetMapping("/list")
+    public List<Employee> fetchAll(){
+        return employeeDao.findAll();
+    }
 
 }
