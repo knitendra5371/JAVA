@@ -18,8 +18,6 @@ public class YoutubeChannel implements Subject{
 
     @Override
     public void newVideoUploaded(String title) {
-        for(Observer obs:this.subscribers){
-            obs.notified(title);
-        }
+        this.subscribers.forEach(obs -> obs.notified(title));
     }
 }

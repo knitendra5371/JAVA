@@ -5,7 +5,7 @@ public abstract class OrderProcessTemplate {
     protected abstract void selectProduct();
     protected abstract void makePayment();
 
-    private final void packProduct(){
+    private void packProduct(){
         if(isGiftWrap){
             System.out.println("Gift wrapping Product");
         }else{

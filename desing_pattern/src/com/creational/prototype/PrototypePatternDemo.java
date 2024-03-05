@@ -41,17 +41,16 @@ class Student implements prototype{
 
 
 
-public class Main {
+public class PrototypePatternDemo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+
 		Student st1=new Student(101,"nitendra");
 		
 		Student st2= (Student)st1.getClone();
 		
 		System.out.println(st1+"  "+st2);
-		System.out.println(st1.hashCode() +"    "+st2.hashCode()); // will get diff hashcode becoz both objects are diff with same value
+		System.out.println(st1.hashCode() +"    "+st2.hashCode()); // will get diff hashcode because both objects are diff with same value
 
 	}
 
