@@ -1,10 +1,10 @@
-package algorithms;
+package algorithms.graph_algo.floydwarshall;
 
 public class AllPairShortestPathFloydWarshall {
-	final static int INF = 99999, V = 4;
+	final static int INF = Integer.MAX_VALUE, V = 4;
 
-	void floydWarshall(int graph[][]) {
-		int dist[][] = new int[V][V];
+	void floydWarshall(int[][] graph) {
+		int[][] dist = new int[V][V];
 		int i, j, k;
 
 		for (i = 0; i < V; i++)
@@ -14,15 +14,16 @@ public class AllPairShortestPathFloydWarshall {
 		for (k = 0; k < V; k++) {
 			for (i = 0; i < V; i++) {
 				for (j = 0; j < V; j++) {
-					if (dist[i][k] + dist[k][j] < dist[i][j])
+					if (dist[i][k]!=INF && dist[k][j]!=INF)
+						if(dist[i][k] + dist[k][j] < dist[i][j])
 						dist[i][j] = dist[i][k] + dist[k][j];
 				}
 			}
 		}
-		printSolution(dist);
+		display(dist);
 	}
 
-	void printSolution(int dist[][]) {
+	void display(int[][] dist) {
 		System.out.println("The following matrix shows the shortest distances between every pair of vertices");
 		for (int i = 0; i < V; ++i) {
 			for (int j = 0; j < V; ++j) {
@@ -36,9 +37,8 @@ public class AllPairShortestPathFloydWarshall {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		int graph[][] = { { 0, 5, INF, 10 }, { INF, 0, 3, INF }, { INF, INF, 0, 1 }, { INF, INF, INF, 0 } };
+		int[][] graph = { { 0, 5, INF, 10 }, { INF, 0, 3, INF }, { INF, INF, 0, 1 }, { INF, INF, INF, 0 } };
 		AllPairShortestPathFloydWarshall a = new AllPairShortestPathFloydWarshall();
 
 		// Print the solution

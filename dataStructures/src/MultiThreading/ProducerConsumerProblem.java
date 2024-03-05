@@ -10,7 +10,7 @@ public class ProducerConsumerProblem {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		Thread producerthread = new Thread(new Runnable() {
+		Thread producerThread = new Thread(new Runnable() {
 			@Override
 			public void run() {
 				producer();
@@ -24,7 +24,7 @@ public class ProducerConsumerProblem {
 			}
 		});
 
-		producerthread.start();
+		producerThread.start();
 		consumerThread.start();
 	}
 

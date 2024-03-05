@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.graph_algo.dfs;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,17 +8,22 @@ import java.util.Stack;
 public class DFS {
 
 	public void dfs(int s, int n, ArrayList<ArrayList<Integer>> al) {
-		Stack<Integer> st = new Stack<Integer>();
+		Stack<Integer> st = new Stack<>();
+		ArrayList<Integer> status = new ArrayList<>(Collections.nCopies(n, 0));
+		// status==>>  0=initial, 1=wait, 2=visited
+		ArrayList<Integer> vertexList = new ArrayList<>();
 		st.push(s);
-		ArrayList<Integer> visit = new ArrayList<Integer>(Collections.nCopies(n, 0));
-		ArrayList<Integer> vertexList = new ArrayList<Integer>();
+		status.set(s,1);
 		while (!st.isEmpty()) {
 			int v = st.pop();
-			vertexList.add(v);
-			visit.set(v, 1);
+			if(status.get(v)!=2) {
+				vertexList.add(v);
+				status.set(v, 2);
+			}
 			for (int i = 0; i < n; i++) {
-				if (al.get(v).get(i) == 1 && visit.get(i) != 1) {
+				if (al.get(v).get(i) == 1 && status.get(i) != 2) {
 					st.push(i);
+					status.set(i,1);
 				}
 			}
 		}
@@ -29,13 +34,13 @@ public class DFS {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Scanner sc = new Scanner(System.in);
 		int t = sc.nextInt();
 		int n = sc.nextInt();
-		ArrayList<ArrayList<Integer>> al = new ArrayList<ArrayList<Integer>>();
+		ArrayList<ArrayList<Integer>> al = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
-			ArrayList<Integer> a = new ArrayList<Integer>();
+			ArrayList<Integer> a = new ArrayList<>();
 			al.add(a);
 			for (int j = 0; j < n; j++) {
 				int v = sc.nextInt();

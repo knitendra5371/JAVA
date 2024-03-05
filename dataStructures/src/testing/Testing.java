@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 import java.util.function.BiFunction;
+import java.util.function.Function;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
 
 //class P{
 //	int i=10;
@@ -25,7 +28,7 @@ public class Testing implements X{
 		Testing t =  new Testing();
 		
 		// TODO Auto-generated method stub
-		System.out.println(t.x);
+//		System.out.println(t.x);
 //		int a=12_______14;
 //		System.out.println("hi  "+a);
 		
@@ -77,6 +80,8 @@ public class Testing implements X{
 		String str1= "nitendra";
 		String str2="nitendra";
 		String str3= new String("nitendra");
+		System.out.println("********************");
+
 		System.out.println(str1.compareTo(str2));
 		System.out.println(str1.equals(str2));
 		System.out.println(str1.compareTo(str3));
@@ -103,12 +108,26 @@ public class Testing implements X{
 		System.out.println("IdentityHashMap"+" => "+ihm);
 		System.out.println("HashMap"+" => "+hm);
 
+		WeakHashMap<String,Integer> whm=new WeakHashMap<>();
+		String neet="Nitendra";
+		String jeet = new String("Jitendra");
+		whm.put(neet,1);
+		whm.put(jeet,2);
+		jeet=null;
+		System.gc();
+		System.out.println("WeakHashMap ==> "+whm);
+
 
 		BiFunction<Float, Float, Float> adder3 = Testing::add;
 
 		float result3 = adder3.apply(10.0f, 20.0f);
 
 		System.out.println("Result =>  "+result3);
+
+
+		int[] ints = IntStream.range(1, 31).toArray();
+
+		System.out.println(Arrays.toString(ints));
 
 
 	}

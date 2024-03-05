@@ -111,13 +111,13 @@ public class LambdaExample {
         }
 
 
-        List<Product> list2=new ArrayList<Product>();
+        List<Product> list2=new ArrayList<>();
         list2.add(new Product(1,"Samsung A5",17000f));
         list2.add(new Product(3,"Iphone 6S",65000f));
         list2.add(new Product(2,"Sony Xperia",25000f));
         list2.add(new Product(4,"Nokia Lumia",15000f));
         list2.add(new Product(5,"Redmi4 ",26000f));
-        list2.add(new Product(6,"Lenevo Vibe",19000f));
+        list2.add(new Product(6,"Lenovo Vibe",19000f));
 
         // using lambda to filter data
         Stream<Product> filtered_data = list2.stream().filter(p -> p.price > 20000);

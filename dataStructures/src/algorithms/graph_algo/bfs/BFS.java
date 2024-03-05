@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.graph_algo.bfs;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,45 +9,52 @@ import java.util.Scanner;
 public class BFS {
 
 	public void bfs(int s, int n, ArrayList<ArrayList<Integer>> al) {
-		// System.out.println("i m inside bfs");
-		Queue<Integer> q = new LinkedList<Integer>();
-		ArrayList<Integer> vertexList = new ArrayList<Integer>();
-		ArrayList<Integer> visit = new ArrayList<Integer>(Collections.nCopies(n, 0));
-		ArrayList<Integer> wait = new ArrayList<Integer>(Collections.nCopies(n, 0));
+
+		Queue<Integer> q = new LinkedList<>();
+		ArrayList<Integer> vertexList = new ArrayList<>();
+		ArrayList<Integer> status = new ArrayList<>(Collections.nCopies(n, 0));
+		// status==>>  0=initial, 1=wait, 2=visited
 		q.add(s);
-		wait.set(s, 1);
+		status.set(s, 1);
 		while (!q.isEmpty()) {
 			int v = q.remove();
 			vertexList.add(v);
-			visit.set(v, 1);
+			status.set(v, 1);
 			for (int i = 0; i < n; i++) {
-				if (al.get(v).get(i) == 1 && visit.get(i) != 1 && wait.get(i) != 1) {
+				if (al.get(v).get(i) == 1 && status.get(i) != 1 ) {
 					q.add(i);
-					wait.set(i, 1);
+					status.set(i, 1);
 				}
 			}
 		}
 
-		for (int i = 0; i < vertexList.size(); i++) {
-			System.out.print(vertexList.get(i) + " ");
+		for (int v : vertexList) {
+			System.out.print(vertexList.get(v) + " ");
 		}
 		System.out.println();
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+    /*
+		1
+		4
+		0 1 0 1
+		1 0 1 1
+		0 0 0 1
+		1 0 1 0
+		*/
 
 		Scanner sc = new Scanner(System.in);
 		int t = sc.nextInt();
 		int n = sc.nextInt();
 
-		ArrayList<ArrayList<Integer>> al = new ArrayList<ArrayList<Integer>>();
+		ArrayList<ArrayList<Integer>> al = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
-			ArrayList<Integer> a = new ArrayList<Integer>();
+			ArrayList<Integer> a = new ArrayList<>();
 			al.add(a);
 			for (int j = 0; j < n; j++) {
-				int v = sc.nextInt();
-				al.get(i).add(v);
+				int val = sc.nextInt();
+				al.get(i).add(val);
 			}
 		}
 		while (t-- > 0) {

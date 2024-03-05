@@ -66,7 +66,7 @@ given key in BST */
     }
     // Driver code
 //    static Node root;
-    public static void main(String args[])
+    public static void main(String[] args)
     {
 		/* Let us create following BST
 			50

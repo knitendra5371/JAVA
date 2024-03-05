@@ -7,7 +7,7 @@ public class ThreadMethods extends Thread {
 				+ Thread.currentThread().getPriority());
 	}
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		ThreadMethods t1 = new ThreadMethods();
 		ThreadMethods t2 = new ThreadMethods();
 		System.out.println("Name of t1:" + t1.getName());

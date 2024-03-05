@@ -1,6 +1,8 @@
 package MultiThreading;
 
 class JM implements Runnable {
+
+	@Override
 	public void run() {
 		for (int i = 1; i <= 5; i++) {
 			System.out.println(i);
@@ -28,11 +30,11 @@ public class JoinMethod {
 
 		try {
 			t1.join(); // we use this join method for wait till finish t1 thread
-//			t1.join(5000); // we use this join method  for wait a fix time , time is in milliseconds 
+//			t1.join(5000); // we use this join method  for wait a fixed time , time is in milliseconds
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("lol");
+		System.out.println("t1 thread task is completed..");
 		t2.start();
 		t3.start();
 

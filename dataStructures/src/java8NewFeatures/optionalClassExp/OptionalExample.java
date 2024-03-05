@@ -19,9 +19,9 @@ public class OptionalExample {
         if(checkNull1.isPresent()){  // It Checks, value is present or not
             String lowercaseString = str[5].toLowerCase();
             System.out.println(lowercaseString);
-        }else
+        }else {
             System.out.println("String value is not present");
-
+        }
 
         str[5] = "JAVA OPTIONAL CLASS EXAMPLE";  // Setting value for 5th index
         Optional<String> checkNull2 = Optional.ofNullable(str[5]);

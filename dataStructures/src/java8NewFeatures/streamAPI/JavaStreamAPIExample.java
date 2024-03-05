@@ -140,13 +140,13 @@ public class JavaStreamAPIExample {
 				.forEach(System.out::println);
 
 		// only syntax checking : extra thing
-		int[] arr ={1,2,3};
-		int arr1[] = {2,3,4};
+		int[] arr ={1,2,3}; // it will work fine. But this is not an Ideal professional way
+		int[] arr1 = new int[]{2,3,4}; // this is an Ideal way
 		int [] array = new int[5];
-		int[] arr2 = m();
+		int[] arr2 = check();
 	}
 
-	static int[] m(){
+	static int[] check(){
 		return new int[]{1,2};
 	}
 

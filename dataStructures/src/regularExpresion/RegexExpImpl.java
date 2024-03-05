@@ -16,14 +16,14 @@ public class RegexExpImpl {
 		}
 		System.out.println(m.groupCount());
 
-		System.out.println(pat.matches("geeks", "geeksforgeeks")); // matches() method check whole content
+		System.out.println(Pattern.matches("geeks", "geeksforgeeks")); // matches() method check whole content
 
-		System.out.println(pat.matches("g(e{2})ksforg(e{2})ks", "geeksforgeeks"));
-		System.out.println(pat.matches("ge*ksforge*ks", "geeksforgeeks"));
+		System.out.println(Pattern.matches("g(e{2})ksforg(e{2})ks", "geeksforgeeks"));
+		System.out.println(Pattern.matches("ge*ksforge*ks", "geeksforgeeks"));
 
-		System.out.println(pat.matches(".s", "$s"));
-		System.out.println(pat.matches("\\ws", "$s"));
-		System.out.println(pat.matches("\\ws", "ms"));
+		System.out.println(Pattern.matches(".s", "$s"));
+		System.out.println(Pattern.matches("\\ws", "$s"));
+		System.out.println(Pattern.matches("\\ws", "ms"));
 
 	}
 
