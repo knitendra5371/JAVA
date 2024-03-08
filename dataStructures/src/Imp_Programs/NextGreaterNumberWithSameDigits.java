@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class NextGreaterNumberWithSameDigits {
 
 	public static void nextNumber(String st) {
-		String str = st;
+//		String str = st;
 		char[] ch = {};
-		ch = str.toCharArray();
+		ch = st.toCharArray();
 		int len = ch.length;
 		int i = 0;
 		for (i = len - 1; i >= 0; i--) {
@@ -15,7 +15,7 @@ public class NextGreaterNumberWithSameDigits {
 				System.out.println("Not Possible");
 				return;
 			}
-			if (ch[i] > ch[i - 1]) {
+			if (ch[i - 1] < ch[i] ) {
 				break;
 			}
 		}

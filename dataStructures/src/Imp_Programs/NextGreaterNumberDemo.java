@@ -2,7 +2,7 @@ package Imp_Programs;
 
 import java.util.Stack;
 
-public class GreaterNumberRightSideInArray {
+public class NextGreaterNumberDemo {
 
 	public static int[] findGreaterNumberArray(int[] arr) {
 		int len = arr.length;
@@ -11,14 +11,12 @@ public class GreaterNumberRightSideInArray {
 
 		Stack<Integer> st = new Stack<>();
 		while (index < len) {
-
 			if (!st.isEmpty() && arr[st.peek()] < arr[index]) {
 				computeArray[st.pop()] = arr[index];
 			} else {
 				st.push(index);
 				index++;
 			}
-
 		}
 
 		while (!st.isEmpty()) {
@@ -29,18 +27,22 @@ public class GreaterNumberRightSideInArray {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		int[] arr = { 1, 17, 4, 9, 2, 0, 10 };
-//		int[] arr = { 2,2,2,2,2};
-//		int[] arr = {};
 
-//		int[] arr = { 9,8,7,6,5,4 };
+		/*
+		* Here we are trying to find first greater number in right side sub array from current position.
+		* */
 
-		int result[] = findGreaterNumberArray(arr);
+		int[] arr = { 1, 17, 4, 9, 2, 0, 10 }; // output=> 17 -1 9 10 10 10 -1
+//		int[] arr = { 2,2,2,2,2}; // output=> -1 -1 -1 -1 -1
+//		int[] arr = {}; // output => blank because array length is 0
 
-		for (int index = 0; index < result.length; index++) {
-			System.out.print(result[index] + " ");
+//		int[] arr = { 9,8,7,6,5,4 }; // output=> -1 -1 -1 -1 -1 -1
+
+		int[] result = findGreaterNumberArray(arr);
+
+		for (int i : result) {
+			System.out.print(i + " ");
 		}
 
 	}

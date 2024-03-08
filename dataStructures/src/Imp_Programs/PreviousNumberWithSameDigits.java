@@ -15,9 +15,9 @@ public class PreviousNumberWithSameDigits {
 	}
 
 	public static void prevNumber(String st) {
-		String str = st;
+//		String str = st;
 		char[] ch = {};
-		ch = str.toCharArray();
+		ch = st.toCharArray();
 
 		int len = ch.length;
 		int i = 0;
@@ -27,7 +27,7 @@ public class PreviousNumberWithSameDigits {
 				System.out.println("Not Possible");
 				return;
 			}
-			if (ch[i] < ch[i - 1]) {
+			if ( ch[i - 1] > ch[i] ) {
 				break;
 			}
 		}

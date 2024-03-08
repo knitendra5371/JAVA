@@ -5,7 +5,10 @@ import java.util.Stack;
 public class MinimumJumpToReachEnd {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		/*
+		* We can solve this problem via bfs also. need to create pair like: Pair(idx,arr[idx])
+		* */
+
 		int[] arr = { 2, 1, 3, 2, 3, 4, 5, 1, 2, 8 };
 
 		int[] min_jump = new int[arr.length];
@@ -17,6 +20,7 @@ public class MinimumJumpToReachEnd {
 
 		int[] path_arr = new int[arr.length];
 
+		// logic for jump
 		for (int i = 1; i < arr.length; i++) {
 			for (int j = 0; j < i; j++) {
 				if (j + arr[j] >= i) {
