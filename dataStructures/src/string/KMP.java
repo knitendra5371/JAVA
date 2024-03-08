@@ -34,22 +34,18 @@ public class KMP {
 
 		while (i < pat.length()) {
 			if (pat.charAt(j) == pat.charAt(i)) {
-				lps[i] = j + 1;
-				i++;
-				j++;
+				lps[i++] = ++j ;
 			} else {
 				if (j != 0) {
 					j = lps[j - 1];
 				} else {
-					lps[i] = 0;
-					i++;
+					lps[i++] = 0;
 				}
 			}
 		}
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		String text = "nitendrakumara";
 		String pat = "ra";
