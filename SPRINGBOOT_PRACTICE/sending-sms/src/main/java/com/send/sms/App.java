@@ -25,7 +25,7 @@ public class App
 			message=URLEncoder.encode(message, "UTF-8");
 			System.out.println(message);
 			
-			String apiKey="YLRkZe9oTxWS1NfhEvaiXbyw0JsUqDMVngpBI63GCOz4AK52FrEuSOMg36GlxhsA2zynQYCefILKvpiB";
+			String apiKey="";
 			
 			String sendId="FSTSMS";
 			String language="english";
@@ -75,7 +75,7 @@ public class App
     {
         System.out.println( "Hello World!" );
         
-        sendSms(" How are you pretty girl ? "+new Date().toLocaleString(),"8591152156");
+        sendSms(" How are you? "+new Date().toLocaleString(),"9087654321");
         
     }
 }

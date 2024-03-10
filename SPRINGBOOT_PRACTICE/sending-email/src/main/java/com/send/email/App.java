@@ -23,10 +23,10 @@ public class App
     {
         System.out.println( "preparing to send mail.....!!" );
         
-        String message="Do you love me??";
-        String subject="About Love";
-        String to="khemkamehak1998@gmail.com";
-        String from ="knitendra5371@gmail.com";
+        String message="about DSA";
+        String subject="About learning.";
+        String to="hello@gmail.com";
+        String from ="testing@gmail.com";
         
        // sendEmail(message,subject,to,from);   // this method only for sent simple text
         
@@ -59,7 +59,7 @@ public class App
 			 */
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("knitendra5371@gmail.com","sidd5371@786");
+				return new PasswordAuthentication("testing@gmail.com","password");
 			}
     		
 		});
@@ -85,7 +85,7 @@ public class App
 				
 				textPart.setText(message);
 				
-				File file=new File("/Users/apple/Downloads/I_love_you.jpg");
+				File file=new File("/Users/apple/Downloads/about.jpg");
 				
 				filePart.attachFile(file);
 				
@@ -134,7 +134,7 @@ public class App
 			 */
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("knitendra5371@gmail.com","sidd5371@786");
+				return new PasswordAuthentication("testing@gmail.com","password");
 			}
     		
 		});
